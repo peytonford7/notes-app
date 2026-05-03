@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.http import JsonResponse
+from .models import Note
 
 # Create your views here.
 def notes_list(request):
-    return render(request, 'notes/notes_list.html')
+    notes = list(Note.objects.values('note_id', 'title', 'content'))
+    return JsonResponse({"notes": notes})
 
 def notes_detail(request, pk: int):
-    return render(request, 'notes/notes_detail.html', {'note_id': pk})
+    note = Note.objects.filter(note_id=pk).values('note_id', 'title', 'content').first()
+    return JsonResponse({"note": note})
