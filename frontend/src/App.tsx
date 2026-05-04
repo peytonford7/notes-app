@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import './App.css'
-import NotesList from './components/notes-ui/NotesList'
-import TodoList from './components/todos-ui/TodoList'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import NotesPage from './pages/NotesPage'
+import TodosPage from './pages/TodosPage'
 
-const App: React.FC = () => {
+export default function App() {
   return (
-    <div>
-      <h1>Notes and Todos App</h1>
-      <NotesList />
-      <TodoList />
-    </div>
-  )
+	<Routes>
+		<Route path='/' element={<HomePage />} />
+		<Route path='/notes' element={<NotesPage />} />
+		<Route path='/todos' element={<TodosPage />} />
+	</Routes>
+  );
 }
 
 export default App
