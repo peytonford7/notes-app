@@ -2,5 +2,6 @@ Django==6.0.4
 djangorestframework==3.17.1
 django-cors-headers==4.9.0
 python-dotenv==1.2.2
+react-router-dom==7.14.2
 pillow==12.2.0
 pytest==9.0.3

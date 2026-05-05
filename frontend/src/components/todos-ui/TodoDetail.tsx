@@ -1,12 +1,28 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { fetchTodo } from '../../api';
 
-const TodoDetail: React.FC = () => {
+export default function TodoDetail({ todo_id }: { todo_id: number }) {
+  const [todo, setTodo] = useState<any>(null);
+
+  useEffect(() => {
+    const loadTodo = async () => {
+      if (todo_id) {
+        const data = await fetchTodo(todo_id);
+        setTodo(data);
+      }
+    };
+    loadTodo();
+  }, [todo_id]);
+
+  if (!todo) return <h2>Loading...</h2>;
+
   return (
-    <div>
-      <h1>Todo Detail</h1>
-      {/* Render todo details here */}
+    <div>      
+      <div className='card'>
+        <strong><h1>{todo.title}</h1></strong>
+        <p>{todo.description}</p>
+        <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
+      </div>
     </div>
   )
 }
-
-export default TodoDetail

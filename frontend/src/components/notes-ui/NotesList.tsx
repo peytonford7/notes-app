@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { fetchNotes } from '../../api';
 
 export default function NotesList() {
@@ -15,10 +16,14 @@ export default function NotesList() {
     return (
       <div>
         <h1>Notes</h1>
+        
         {notes.map((note) => (
-          <div key={note.note_id}>
-            <strong>{note.title}</strong>
+          <div className='card'key={note.note_id}>
+            <Link to={`/notes/${note.note_id}`}>
+              <strong>{note.title}</strong>
+            </Link>
             <p>{note.content}</p>
+            <p>Created: {note.created_at}</p>
             <hr />
           </div>
         ))}
