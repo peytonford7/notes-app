@@ -15,16 +15,18 @@ export default function TodoList() {
 
     return (
       <div>
-        <h1>Todo List</h1>
-
         {todos.map((todo) => (
-          <div className='card' key={todo.todo_id}>
-            <Link to={`/todos/${todo.todo_id}`}>
-              <strong>{todo.title}</strong>
-            </Link>
-            <p>{todo.description}</p>
-            <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
-            <hr />
+          <div>
+            <div className='todo_card' key={todo.todo_id}>
+              <Link to={`/todos/${todo.todo_id}`}>
+                <strong>{todo.title}</strong>
+              </Link>
+              <p>{todo.description}</p>
+              <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
+            </div>
+            <div>
+              <hr />
+            </div>
           </div>
         ))}
       </div>

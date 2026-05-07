@@ -18,6 +18,4 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('api.urls')),
-    path('notes/', include('notes.urls')),
-    path('todos/', include('todos.urls')),
 ]

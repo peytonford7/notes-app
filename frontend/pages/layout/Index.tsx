@@ -5,7 +5,9 @@ export default function Index({children}: {children: React.ReactNode}) {
   return (
     <div>
       <Header />
-      <main>{children}</main>
+        <hr />
+          <main>{children}</main>
+        <hr />
       <Footer />
     </div>
   );

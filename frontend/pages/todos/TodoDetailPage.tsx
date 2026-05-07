@@ -7,11 +7,11 @@ export default function TodoDetailPage() {
 
 	return (
 		<Index>
+			<TodoDetail todo_id={Number(todo_id)} />
+
 			<Link to='/todos'>
 				<button>Back</button>
 			</Link>
-
-			<TodoDetail todo_id={Number(todo_id)} />
 		</Index>
 	);
 }

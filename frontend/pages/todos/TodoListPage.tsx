@@ -5,11 +5,11 @@ import TodoList from '../../src/components/todos-ui/TodoList'
 export default function TodoListPage() {
 	return (
 		<Index>
-			<Link to='/'>
-				<button>Back</button>
-			</Link>
-
 			<TodoList />
+			
+			<Link to='/'>
+				<button>Home</button>
+			</Link>
 		</Index>
 	);
 }

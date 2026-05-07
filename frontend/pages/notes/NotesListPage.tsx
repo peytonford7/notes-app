@@ -5,11 +5,11 @@ import NotesList from '../../src/components/notes-ui/NotesList'
 export default function NotesListPage() {
 	return (
 		<Index>
-			<Link to='/'>
-				<button>Back</button>
-			</Link>
-
 			<NotesList />
+
+			<Link to='/'>
+				<button>Home</button>
+			</Link>
 		</Index>
 	);
 }

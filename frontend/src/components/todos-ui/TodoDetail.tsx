@@ -6,10 +6,8 @@ export default function TodoDetail({ todo_id }: { todo_id: number }) {
 
   useEffect(() => {
     const loadTodo = async () => {
-      if (todo_id) {
-        const data = await fetchTodo(todo_id);
-        setTodo(data);
-      }
+      const data = await fetchTodo(todo_id);
+      setTodo(data);
     };
     loadTodo();
   }, [todo_id]);
@@ -18,8 +16,8 @@ export default function TodoDetail({ todo_id }: { todo_id: number }) {
 
   return (
     <div>      
-      <div className='card'>
-        <strong><h1>{todo.title}</h1></strong>
+      <div className='todo_card'>
+        <strong><h3>{todo.title}</h3></strong>
         <p>{todo.description}</p>
         <p>Completed: {todo.completed ? 'Yes' : 'No'}</p>
       </div>

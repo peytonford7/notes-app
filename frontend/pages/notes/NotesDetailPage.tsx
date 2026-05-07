@@ -7,11 +7,11 @@ export default function NotesDetailPage() {
 
 	return (
 		<Index>
+			<NotesDetail note_id={Number(note_id)} />
+
 			<Link to='/notes'>
 				<button>Back</button>
 			</Link>
-
-			<NotesDetail note_id={Number(note_id)} />
 		</Index>
 	);
 }

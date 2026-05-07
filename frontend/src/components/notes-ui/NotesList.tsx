@@ -14,17 +14,18 @@ export default function NotesList() {
     }, []);
 
     return (
-      <div>
-        <h1>Notes</h1>
-        
+      <div>      
         {notes.map((note) => (
-          <div className='card'key={note.note_id}>
-            <Link to={`/notes/${note.note_id}`}>
-              <strong>{note.title}</strong>
-            </Link>
-            <p>{note.content}</p>
-            <p>Created: {note.created_at}</p>
-            <hr />
+          <div>
+            <div className='note_card'key={note.note_id}>
+              <Link to={`/notes/${note.note_id}`}>
+                <strong>{note.title}</strong>
+              </Link>
+              <p>{note.content}</p>
+            </div>
+            <div>
+              <hr />
+            </div>
           </div>
         ))}
       </div>
