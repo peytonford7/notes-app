@@ -36,8 +36,8 @@ button:hover {
 	padding: 8px;
 
 	background-image: repeating-linear-gradient(
-	#dce58c,
-	#dce58c 1.7rem,
+	#e0ec79,
+	#e0ec79 1.7rem,
 	#e8b5b5 1.755rem 1.8rem
     ) !important;
 }
@@ -49,4 +49,9 @@ a {
 
 a:hover {
 	text-decoration: underline;
+}
+
+ .title_hover:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }

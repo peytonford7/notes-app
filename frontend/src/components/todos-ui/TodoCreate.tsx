@@ -19,7 +19,11 @@ export default function TodoCreate() {
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder='Title'
             /><br />
+            <br />
             <textarea
+                rows={10}
+                cols={40}
+                className='todo_card'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder='Description'
@@ -30,21 +34,21 @@ export default function TodoCreate() {
                 checked={completed}
                 onChange={(e) => setCompleted(e.target.checked)}
             />
-            Completed
+            Completed<br />
             </label><br />
             <button onClick={handleCreateTodo}>Create Todo</button>
 
             {todo && (
                 <div>
                     <br />
-                    <div className='card'>
+                    <div className='todo_card'>
                         <strong><h3>{todo.title}</h3></strong>
                         <p>{todo.description}</p>
                         <p>{todo.completed ? 'Completed' : 'Not Completed'}</p>
                     </div>
                 </div>
             )}
-            <br />
+            <hr />
         </div>
     );
 }

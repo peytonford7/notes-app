@@ -18,10 +18,14 @@ export default function App() {
 		<Route path='/notes' element={<NotesListPage />} />
 		<Route path='/notes/:note_id' element={<NotesDetailPage />} />
 		<Route path='/notes/create' element={<NotesCreatePage />} />
+		<Route path='/notes/:note_id/update' element={<NotesCreatePage />} />
+		<Route path='/notes/:note_id/delete' element={<NotesListPage />} />
 		
 		<Route path='/todos' element={<TodoListPage />} />
 		<Route path='/todos/:todo_id' element={<TodoDetailPage />} />
 		<Route path='/todos/create' element={<TodoCreatePage />} />
+		<Route path='/todos/:todo_id/update' element={<TodoCreatePage />} />
+		<Route path='/todos/:todo_id/delete' element={<TodoListPage />} />
 	</Routes>
   );
 }
