@@ -24,3 +24,31 @@ def todo_create(request):
         return JsonResponse({"todo": {"todo_id": todo_id, "title": todo.title, "description": todo.description, "completed": todo.completed}}, status=201)
     else:
         return JsonResponse({"error": "Invalid HTTP method"}, status=405)
+
+@csrf_exempt
+def todo_update(request, pk: int):
+    if request.method == 'PUT':
+        body = json.loads(request.body)
+        title = body.get('title')
+        description = body.get('description')
+        completed = body.get('completed')
+        todo = Todo.objects.filter(todo_id=pk).first()
+        todo.title = title
+        todo.description = description
+        todo.completed = completed
+        todo.save()
+        return JsonResponse({"todo": {"todo_id": pk, "title": todo.title, "description": todo.description, "completed": todo.completed}})
+    else:
+        return JsonResponse({"error": "Invalid HTTP method"}, status=405)
+
+@csrf_exempt
+def todo_delete(request, pk: int):
+    if request.method == 'DELETE':
+        todo = Todo.objects.filter(todo_id=pk).first()
+        if todo:
+            todo.delete()
+            return JsonResponse({"message": "Todo deleted successfully"})
+        else:
+            return JsonResponse({"error": "Todo not found"}, status=404)
+    else:
+        return JsonResponse({"error": "Invalid HTTP method"}, status=405)
