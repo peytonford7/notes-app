@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchTodos } from '../../api';
+import '../../main.css'
 
 export default function TodoList() {
     const [todos, setTodos] = useState<any[]>([]);

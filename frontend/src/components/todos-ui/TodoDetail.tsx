@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { fetchTodo, updateTodo, deleteTodo } from '../../api'
+import '../../main.css'
 
 export default function TodoDetail({ todo_id }: { todo_id: number }) {
   const [title, setTitle] = useState('');
@@ -77,8 +78,10 @@ export default function TodoDetail({ todo_id }: { todo_id: number }) {
                   }}
                   /> Completed
         <br /><br />
-        <button onClick={handleUpdateTodo}>Save Todo</button>
-        <button onClick={handleDeleteTodo}>Delete Todo</button>
+        <div className='button_container'>
+          <button onClick={handleUpdateTodo}>Save</button>
+          <button onClick={handleDeleteTodo}>Delete</button>
+        </div>
         <hr />
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { createNote } from '../../api'
+import '../../main.css'
 
 export default function NotesCreate() {
     const [title, setTitle] = useState('');
@@ -35,7 +36,6 @@ export default function NotesCreate() {
                     <div className='note_card'>
                         <strong><h3>{note.title}</h3></strong>
                         <p>{note.content}</p>
-                        <p>{note.completed ? 'Completed' : 'Not Completed'}</p>
                     </div>
                 </div>
             )}

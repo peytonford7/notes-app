@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { fetchNote, updateNote, deleteNote } from '../../api'
+import '../../main.css'
 
 export default function NotesDetail({ note_id }: { note_id: number }) {
   const [title, setTitle] = useState('');
@@ -68,8 +69,10 @@ export default function NotesDetail({ note_id }: { note_id: number }) {
           </p>
         </div>
         <hr />
-        <button onClick={handleUpdateNote}>Save Note</button>
-        <button onClick={handleDeleteNote}>Delete Note</button>
+        <div className='button_container'>
+          <button onClick={handleUpdateNote}>Save</button>
+          <button onClick={handleDeleteNote}>Delete</button>
+        </div>
         <hr />
     </div>
   );

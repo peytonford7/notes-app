@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { createTodo } from '../../api'
+import '../../main.css'
 
 export default function TodoCreate() {
     const [title, setTitle] = useState('');
@@ -36,7 +37,7 @@ export default function TodoCreate() {
             />
             Completed<br />
             </label><br />
-            <button onClick={handleCreateTodo}>Create Todo</button>
+            <button onClick={handleCreateTodo}>Create To-Do</button>
 
             {todo && (
                 <div>

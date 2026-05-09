@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchNotes } from '../../api';
+import '../../main.css'
 
 export default function NotesList() {
     const [notes, setNotes] = useState<any[]>([]);

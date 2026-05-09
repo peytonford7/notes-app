@@ -16,6 +16,11 @@ button:hover {
 	border-color: grey;
 }
 
+.button_container {
+	display: flex;
+	gap: 8px;
+}
+
 .note_card {
 	font-family: monospace;
 	border: 1px solid grey;
@@ -51,7 +56,7 @@ a:hover {
 	text-decoration: underline;
 }
 
- .title_hover:hover {
+.title_hover:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }

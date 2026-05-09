@@ -4,21 +4,23 @@ import Index from './layout/Index'
 export default function HomePage() {
 	return (
 		<Index>
-			<Link to='/notes'>
-				<button>Go to Notes</button>
-			</Link>
+			<div className='button_container' style={{ justifyContent: 'center' }}>
+				<Link to='/notes'>
+					<button>Notes List</button>
+				</Link>
 
-			<Link to='/todos'>
-				<button>Go to Todo List</button>
-			</Link>
+				<Link to='/todos'>
+					<button>To-Do List</button>
+				</Link>
 
-			<Link to='/notes/create'>
-				<button>Create a Note</button>
-			</Link>
+				<Link to='/notes/create'>
+					<button>Create Note</button>
+				</Link>
 
-			<Link to='/todos/create'>
-				<button>Create a Todo</button>
-			</Link>
+				<Link to='/todos/create'>
+					<button>Create To-Do</button>
+				</Link>
+			</div>
 		</Index>
 	);
 }
